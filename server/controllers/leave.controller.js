@@ -1,4 +1,4 @@
-import Leaves from "../model/Leave.model";
+import Leaves from "../model/Leave.model.js";
 import mongoose from "mongoose";
 
 

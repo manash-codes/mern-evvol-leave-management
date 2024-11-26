@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from './db/connection.js';
-import leaveRouter from ("./routes/leave.routes.js")
+import connectDB from "../db/connection.js";
+import leaveRouter from "../routes/leave.routes.js"
 
 dotenv.config();
 
