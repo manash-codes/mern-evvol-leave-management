@@ -4,6 +4,6 @@ import { getLeaves, applyLeave } from '../controllers/leave.controller.js';
 const router = Router();
 
 router.get('/', getLeaves);
-router.post('/apply', applyLeave);
+router.patch('/apply', applyLeave);
 
 export default router
