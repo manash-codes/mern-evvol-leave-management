@@ -14,18 +14,24 @@ const leaveSchema = new Schema({
         type: Number,
         default: 0,
     },
-    totalNumberOfLeaves: {
+    casualLeave: {
         type: Number,
-        default: 0
+        default: 0,
     },
-    totalNumberOfAvailedLeaves: {
+    totalLeaves: {
         type: Number,
-        default: 0
+        default: 25
+    },
+    totalAvailedLeaves: {
+        type: Number,
+        default: function () {
+            return this.sickLeave + this.casualLeave + this.earnedLeave;
+        }
     },
     balance: {
         type: Number,
         default: function () {
-            return this.totalNumberOfLeaves - this.totalNumberOfAvailedLeaves;
+            return this.totalLeaves - this.totalAvailedLeaves;
         }
     }
 });
