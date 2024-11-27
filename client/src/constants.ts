@@ -8,4 +8,6 @@ const TABLEHEADER = [
     "Balance"
 ];
 
-export { TABLEHEADER }
+const APPURL = import.meta.env.VITE_APP_URL || "http://localhost:5000/api";
+
+export { TABLEHEADER, APPURL };
