@@ -1,14 +1,8 @@
-import { useState } from 'react';
-import { TABLEHEADER } from '../constants'
-import { Leave } from '../types/Leave'
+import { TABLEHEADER } from '../constants';
+import { Leave } from '../types/Leave';
 
-interface TableProps {
-    leavesData: Leave[]
-}
 
-const Table = ({ leavesData }: TableProps) => {
-    const [leaves] = useState(leavesData);
-
+const Table = ({ leavesData }: { leavesData?: Leave[] }) => {
     const TableHead = ({ title }: { title: string }) =>
         <th className="px-4 py-2">{title}</th>
 
@@ -23,7 +17,7 @@ const Table = ({ leavesData }: TableProps) => {
                 </thead>
                 <tbody>
                     {
-                        leaves.map((leave) => (
+                        leavesData?.map((leave) => (
                             <tr key={leave._id}>
                                 <td className="px-4 py-2">{leave.name}</td>
                                 <td className="px-4 py-2">{leave.sickLeave}</td>
